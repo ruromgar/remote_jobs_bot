@@ -1,0 +1,18 @@
+org: your-organization-name
+app: your-app-name
+service: scheduled-tg-bot
+
+frameworkVersion: ">=1.2.0 <2.0.0"
+
+provider:
+  name: aws
+  runtime: python3.6
+  environment:
+    TELEGRAM_TOKEN: ${env:TELEGRAM_TOKEN}
+
+functions:
+  cron:
+    handler: handler.send_message
+    events:
+      # Invoke Lambda function at 21:00 UTC every day
+      - schedule: cron(00 21 * * ? *)
