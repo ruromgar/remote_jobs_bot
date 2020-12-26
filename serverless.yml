@@ -1,6 +1,6 @@
 org: your-organization-name
 app: your-app-name
-service: scheduled-tg-bot
+service: remote-jobs-bot
 
 frameworkVersion: ">=1.2.0 <2.0.0"
 
